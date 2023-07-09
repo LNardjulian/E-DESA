@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pengajuan Jadwal</title>
+    <title>Document</title>
     <script src="/assets/admin/vendor/jquery/jquery.min.js"></script>
     <script src="/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="/assets/admin/css/sb-admin-2.min.css">
+    <link rel="stylesheet" href="/assets/admin/css/sb-admin-2.min.css" />
+    <style>
+        .table-bordered th {
+            border: #54BAB9 solid 1px;
+        }
+        
+        .table-bordered td {
+            border: #54BAB9 solid 1px;
+        }
+    </style>
 </head>
 
 <body>
@@ -171,36 +180,73 @@
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
                         <!-- diisi konten -->
-                        <h2 style="color: #387372;">Jadwal Kegiatan Warga</h2>
-                        <div class="d-flex justify-content-around my-4">
-                            <div class="w-100 rounded bg-white p-4 w-100 d-flex justify-content-around">
-                                <form action="">
-                                    <div class="my-3 rounded w-100" style="width: 800px;border-color: #387372;border-width: 1px;border-style: solid;">
-                                        <h5 class="mb-3 rounded p-3 text-white" style="background-color: #387372;">
-                                            Ajukan Jadwal Kegiatan Warga</h5>
-                                        <div class="d-flex justify-content-between flex-wrap w-100 px-3">
-                                            <label for="nama" class="form-label" style="color: #387372;">Pelaksana
-                                                :</label>
-                                            <input id="nama" class="form-control h-100" name="pelaksana">
-                                            <br>
-                                            <label for="nama" class="form-label" style="color: #387372;">Lokasi
-                                                :</label>
-                                            <input id="nama" class="form-control h-100" name="Lokasi">
-                                            <br>
-                                            <label for="nama" class="form-label" style="color: #387372;">Waktu :</label>
-                                            <input id="nama" class="form-control h-100" name="Waktu">
-                                            <br>
-                                            <label for="nama" class="form-label" style="color: #387372;">Pembahasan
-                                                :</label>
-                                            <input id="nama" class="form-control h-100" name="Pembahasan">
-                                            <br>
-                                            <div class="text-right w-100 my-3">
-                                                <a href="TabelPengajuanJadwal.html" class="btn rounded-pill text-white" style="background-color: #387372;">Ajukan</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                        <div class="d-flex justify-content-start mx-3">
+                            <span class="ml-5 h3" style="color: #387372; font-size: 20px;">Bank Sampah</span>
+                            <span class="ml-5 h3" style="color: #387372; font-size: 20px;">Sampah</span>
+                        </div>
+                        <div class="d-flex justify-content-between flex-wrap w-100 px-3">
+                            <table class="table table-bordered table-hover border-primary mt-2">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="color: #235252;border: #54BAB9 solid 1px; text-align: center;">RT</th>
+                                        <th scope="col" style="color: #235252;border: #54BAB9 solid 1px; text-align: center;">Tanggal</th>
+                                        <th scope="col" style="color: #235252;border: #54BAB9 solid 1px; text-align: center;">Berat</th>
+                                        <th scope="col" style="color: #235252;border: #54BAB9 solid 1px; text-align: center;">Pendapatan</th>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row " class="text-center" style="color: #235252; "> 07</th>
+                                        <td style="color: #235252; text-align: center; "> 17 Mei 2023</td>
+                                        <td style="color: #235252; text-align: center; "> 50 Kg</td>
+                                        <td style="color: #235252; text-align: center; "> RP 40.000</td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row " class="text-center" style="color: #235252; "> 08</th>
+                                        <td style="color: #235252; text-align: center; "> 17 Mei 2023</td>
+                                        <td style="color: #235252; text-align: center; "> 70 Kg</td>
+                                        <td style="color: #235252; text-align: center; "> RP 90.000</td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row " class="text-center" style="color: #235252; "> 09</th>
+                                        <td style="color: #235252; text-align: center; "> 17 Mei 2023</td>
+                                        <td style="color: #235252; text-align: center; "> 30 Kg</td>
+                                        <td style="color: #235252; text-align: center; "> RP 75.000</td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row " class="text-center" style="color: #235252; "></th>
+                                        <td style="color: #235252; text-align: center; "> </td>
+                                        <td style="color: #235252; text-align: center; "> </td>
+                                        <td style="color: #235252; text-align: center; "> </td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row " class="text-center" style="color: #235252; "></th>
+                                        <td style="color: #235252; text-align: center; "> </td>
+                                        <td style="color: #235252; text-align: center; "> </td>
+                                        <td style="color: #235252; text-align: center; "> </td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row " class="text-left" style="color: #235252; "></th>
+                                        <td style="color: #235252; text-align: center; "> </td>
+                                        <td style="color: #235252; text-align: center; "> </td>
+                                        <td style="color: #235252; text-align: center; "> </td>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row " class="text-center" style="color: #235252; "></th>
+                                        <td style="color: #235252; text-align: center; "> </td>
+                                        <td style="color: #235252; text-align: center; "> </td>
+                                        <td style="color: #235252; text-align: center; "> </td>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

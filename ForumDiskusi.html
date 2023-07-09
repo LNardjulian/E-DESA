@@ -3,10 +3,22 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
+    <title>Document</title>
     <script src="/assets/admin/vendor/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="/assets/admin/css/sb-admin-2.min.css" />
     <script src="/assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="/assets/admin/css/sb-admin-2.min.css">
+    <script>
+        function show(obj) {
+            document.getElementById(obj.id + "box").style.display = 'none';
+            document.getElementById(obj.id + "back").style.display = 'block';
+        }
+
+        function showComment(id) {
+            const ids = id.split("back");
+            document.getElementById(ids[0] + "box").style.display = "block";
+            document.getElementById(id).style.display = "none ";
+        }
+    </script>
 </head>
 
 <body>
@@ -168,106 +180,134 @@
                     </nav>
                     <!-- End of Topbar -->
 
+                    <!-- modal -->
+                    <!-- Button trigger modal -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title d-flex" id="exampleModalLabel">
+                                        <img src="/assets/img/profile.png" class="m-2" style="filter: invert();" alt="" width="60">
+                                        <div class="d-flex flex-column m-2">
+                                            <span>Maskuri</span>
+                                            <strong>Kepala Desa</strong>
+                                        </div>
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <textarea class="form-control" name="judul" id="judul" rows="3" placeholder="Judul..."></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <textarea class="form-control" name="deskripsi" id="deskripsi" rows="3" placeholder="Deskripsi..."></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn rounded-pill text-white px-4" style="background-color: #387372;">Kirim</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
                         <!-- diisi konten -->
-                        <h2>Pengaturan Akun</h2>
+                        <h2 style="color: #387372;">Forum Diskusi Desa</h2>
                         <div class="d-flex justify-content-around my-4">
-                            <div class="w-100 rounded bg-white p-4 d-flex justify-content-around" style="border-right: #387372;border-style: solid;border-width: 1px;border-top: 0;border-left: 0;border-bottom: 0;">
-                                <div>
-                                    <span class="badge text-white" style="background-color: rgb(56, 115, 114,30%);">
-                                        <h6 style="color: #387372;">Profil</h6>
-                                    </span>
+                            <div class="d-flex justify-content-around flex-wrap w-100 px-3">
+                                <button type="button" class="my-2 mx-5 w-100 py-1 px-4 border border-info" style="border-radius: 15px;" data-toggle="modal" data-target="#exampleModal">
+                                    <div class="d-flex justify-content-between flex-wrap">
+                                        <span class="d-flex align-items-center" style="color: #54BAB9;">Tambah Topik
+                                            Diskusi</span>
+                                        <img src="/assets/img/tambah.png" width="40" alt="">
+                                    </div>
+                                </button>
+                                <div class="my-2 mx-5 w-100 py-1 px-3 border border-info d-flex justify-content-between flex-wrap pb-4 pt-2" style="border-radius: 15px;">
+                                    <div class="d-flex justify-content-between w-100">
+                                        <div class="d-flex flex-wrap">
+                                            <button id="boxAksi1back" class="btn" onclick="showComment(this.id)" style="display: none;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="transform: scaleX(-1);" fill="#387372" class="bi bi-arrow-right" viewBox=" 0 0 16 16">
+                                                    <path fill-rule="evenodd "
+                                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z " />
+                                                </svg>
+                                            </button>
+                                            <div class="d-flex flex-column ml-3 ">
+                                                <strong style="color: #387372; ">Acara Agustusan 2023</strong>
+                                                <span style="color: #387372; ">6 Jam yang lalu</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column flex-wrap ">
+                                            <div class="d-flex justify-content-around ">
+                                                <img src="/assets/img/login.png " class="rounded-circle m-2 " width="50 " alt=" ">
+                                                <div class="d-flex flex-column justify-content-center m-2 ">
+                                                    <span style="color: #387372; ">Maskuri</span>
+                                                    <b style="color: #387372; ">Kepala Desa</b>
+                                                </div>
+                                                <img src="/assets/img/titik.png " class="mx-1 my-3 " height="10% " alt=" ">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="mt-2 ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus modi quidem minima harum eaque ipsa non adipisci corporis nesciunt culpa, veritatis quod, laudantium ut itaque obcaecati voluptate. Delectus, sequi ratione.
+                                    </p>
+                                    <div id="boxAksi1box">
+                                        <div class="d-flex justify-content-start flex-wrap ">
+                                            <button class="btn d-flex justify-content-center mx-2 ">
+                                                <img src="/assets/img/like.png " class="mx-1 " width="20 " alt=" ">
+                                                <span class="mx-1 ">Suka</span>
+                                                <span class="mx-1 ">(21)</span>
+                                            </button>
+                                            <a href="Komentar.html" class="btn d-flex justify-content-center " id="boxAksi1">
+                                                <img src="/assets/img/komen.png " class="mx-1 " width="20 " alt=" ">
+                                                <span class="mx-1 ">Komentar</span>
+                                                <span class="mx-1 ">(8)</span>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div style="border:solid 1px #387372"></div>
-                                <div class="d-flex flex-column align-items-center">
-                                    <div class="my-3 p-3 rounded d-flex justify-content-start" style="width: 800px;border:solid 1px #387372;border-radius: 10px;">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="grey" class="bi bi-person-circle m-2" viewBox="0 0 16 16">
-                                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                            <path fill-rule="evenodd"
-                                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                                        </svg>
-                                        <div class="d-flex flex-column justify-content-start m-2">
-                                            <strong style="color: #387372;">Dewa Santoso</strong>
-                                            <h5 style="color: #387372;">Warga</h5>
-                                            <h6 style="color: #387372;">RT01/RW02</h6>
+                                <div class="my-2 mx-5 w-100 py-1 px-3 border border-info d-flex justify-content-between flex-wrap pb-4 pt-2" style="border-radius: 15px;">
+                                    <div class="d-flex justify-content-between w-100">
+                                        <div class="d-flex flex-wrap">
+                                            <button id="boxAksi1back" class="btn" onclick="showComment(this.id)" style="display: none;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="transform: scaleX(-1);" fill="#387372" class="bi bi-arrow-right" viewBox=" 0 0 16 16">
+                                                    <path fill-rule="evenodd "
+                                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z " />
+                                                </svg>
+                                            </button>
+                                            <div class="d-flex flex-column ml-3 ">
+                                                <strong style="color: #387372; ">Pengajuan Sampah Keliling</strong>
+                                                <span style="color: #387372; ">2 Mei 2023</span>
+                                            </div>
                                         </div>
-
-                                    </div>
-                                    <div class=" my-3 p-3 rounded" style="width: 800px;border: #387372 solid 1px; border-radius: 10px;">
-                                        <h5 class="mb-5" style="color: #387372;">Informasi Pribadi</h5>
-                                        <div class="d-flex justify-content-between flex-wrap w-100">
-                                            <div class="d-flex flex-column rounded" style="width: 300px;">
-                                                <label for="nama" class="text-success form-label">Nama</label>
-                                                <h6 id="nama" class="text-success form-control h-100">Dewa Santoso</h6>
-                                                <br>
-                                                <label for="nama" class="text-success form-label">Tempat, Tanggal Lahir</label>
-                                                <h6 id="nama" class="text-success form-control h-100">Dewa Santoso</h6>
-                                                <br>
-                                                <label for="nama" class="text-success form-label">Umur</label>
-                                                <h6 id="nama" class="text-success form-control h-100">Dewa Santoso</h6>
-                                                <br>
-                                            </div>
-                                            <div class="d-flex flex-column rounded" style="width: 300px;">
-                                                <label for="nama" class="text-success form-label">Jenis Kelamin</label>
-                                                <h6 id="nama" class="text-success form-control h-100">Dewa Santoso</h6>
-                                                <br>
-                                                <label for="nama" class="text-success form-label">Pekerjaan/Sekolah</label>
-                                                <h6 id="nama" class="text-success form-control h-100">Dewa Santoso</h6>
-                                                <br>
-                                                <label for="nama" class="text-success form-label">Pekerjaan Orang Tua</label>
-                                                <h6 id="nama" class="text-success form-control h-100">Dewa Santoso</h6>
-                                                <br>
-                                            </div>
-                                            <div class="d-flex align-items-end">
-                                                <button class="btn btn-outline-success rounded-pill">Edit
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                        fill="currentColor" class="bi bi-pencil-square"
-                                                        viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                                        <path fill-rule="evenodd"
-                                                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                                                    </svg>
-                                                </button>
+                                        <div class="d-flex flex-column flex-wrap ">
+                                            <div class="d-flex justify-content-around ">
+                                                <img src="/assets/img/login.png " class="rounded-circle m-2 " width="50 " alt=" ">
+                                                <div class="d-flex flex-column justify-content-center m-2 ">
+                                                    <span style="color: #387372; ">Marsino</span>
+                                                    <b style="color: #387372; ">Warga</b>
+                                                </div>
+                                                <img src="/assets/img/titik.png " class="mx-1 my-3 " height="10% " alt=" ">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="border my-3 p-3 border-success rounded" style="width: 800px;">
-                                        <h5 class="mb-5" style="color: black;">Informasi Alamat</h5>
-                                        <div class="d-flex justify-content-between flex-wrap w-100">
-                                            <div class="d-flex flex-column rounded" style="width: 100px;">
-                                                <label for="nama" class="text-success form-label">Jalan</label>
-                                                <h6 id="nama" class="text-success form-control h-100">Dewa Santoso</h6>
-                                            </div>
-                                            <div class="d-flex flex-column rounded" style="width: 100px;">
-                                                <label for="nama" class="text-success form-label">Desa</label>
-                                                <h6 id="nama" class="text-success form-control h-100">Dewa Santoso</h6>
-                                            </div>
-                                            <div class="d-flex flex-column rounded" style="width: 100px;">
-                                                <label for="nama" class="text-success form-label">Kecamatan</label>
-                                                <h6 id="nama" class="text-success form-control h-100">Dewa Santoso</h6>
-                                            </div>
-                                            <div class="d-flex flex-column rounded" style="width: 100px;">
-                                                <label for="nama" class="text-success form-label">RT</label>
-                                                <h6 id="nama" class="text-success form-control h-100">Dewa Santoso</h6>
-                                            </div>
-                                            <div class="d-flex flex-column rounded" style="width: 100px;">
-                                                <label for="nama" class="text-success form-label">RW</label>
-                                                <h6 id="nama" class="text-success form-control h-100">Dewa Santoso</h6>
-                                            </div>
-                                            <div class="d-flex align-items-end">
-                                                <button class="btn btn-outline-success rounded-pill">Edit
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                        fill="currentColor" class="bi bi-pencil-square"
-                                                        viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                                        <path fill-rule="evenodd"
-                                                            d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                                                    </svg>
-                                                </button>
-                                            </div>
+                                    <p class="mt-2 ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus modi quidem minima harum eaque ipsa non adipisci corporis nesciunt culpa, veritatis quod, laudantium ut itaque obcaecati voluptate. Delectus, sequi ratione.
+                                    </p>
+                                    <div id="boxAksi1box">
+                                        <div class="d-flex justify-content-start flex-wrap ">
+                                            <button class="btn d-flex justify-content-center mx-2 ">
+                                                <img src="/assets/img/like.png " class="mx-1 " width="20 " alt=" ">
+                                                <span class="mx-1 ">Suka</span>
+                                                <span class="mx-1 ">(21)</span>
+                                            </button>
+                                            <a href="Komentar.html" class="btn d-flex justify-content-center " id="boxAksi1">
+                                                <img src="/assets/img/komen.png " class="mx-1 " width="20 " alt="">
+                                                <span class="mx-1 ">Komentar</span>
+                                                <span class="mx-1 ">(8)</span>
+                                            </a>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -277,6 +317,16 @@
                 </div>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            const alerts = () => {
+                Swal.fire({
+                    showConfirmButton: false,
+                    title: "Tes",
+                    icon: "success"
+                })
+            }
+        </script>
     </body>
 
 </html>
